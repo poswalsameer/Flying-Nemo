@@ -33,5 +33,6 @@ public class BrickSpawning : MonoBehaviour
         walls.transform.position = Vector3.up * Random.Range( minHeight, maxHeight );   
     }
 
+    //this comment has been added to check if the github repo is responding or not
 
 }
