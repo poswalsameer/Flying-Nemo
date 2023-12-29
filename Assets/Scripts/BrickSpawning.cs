@@ -28,11 +28,17 @@ public class BrickSpawning : MonoBehaviour
     //main function that will spawn walls
     private void spawn()
     {
-        GameObject walls = Instantiate(prefab, transform.position, Quaternion.identity );
+        //this was done to make sure the walls are spawned from the right end of the screen
+        //here in this vector3, the z-value has been set to 1 by hit and trial because the walls were not visible due to some kind of layering issue
+        Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Random.Range(0, Screen.height), 1));
 
-        walls.transform.position = Vector3.up * Random.Range( minHeight, maxHeight );   
+        GameObject walls = Instantiate(prefab, spawnPosition, Quaternion.identity );
+
+        walls.transform.position += Vector3.up * Random.Range( minHeight, maxHeight );   
     }
 
     //this comment has been added to check if the github repo is responding or not
+    }
 
-}
+
+
