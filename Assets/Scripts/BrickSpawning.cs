@@ -7,11 +7,11 @@ public class BrickSpawning : MonoBehaviour
     public GameObject prefab;
 
     //variable to store the spawning rate
-    public float spawnRate = 1f;
+    public float spawnRate = 1.5f;
 
     //variables to adjust the height of new spawned walls
-    public float minHeight = -1f;
-    public float maxHeight = +1f;
+    public float minHeight = -1.2f;
+    public float maxHeight = +1.2f;
 
     //function to that will invoke the spawning function to show walls at the rate of "spawnRate"
     private void OnEnable()

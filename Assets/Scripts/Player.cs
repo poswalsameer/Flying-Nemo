@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float gravity = -9.8f;
     //a variable used to control the strength of the flying of the bird
     public float flyStrength = 5f;
+    public float dropStrength = 4f;
 
     private void Update()
     {
@@ -18,6 +19,10 @@ public class Player : MonoBehaviour
         {
             direction = Vector3.up * flyStrength ;
         }
+        if( Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            direction = Vector3.down * dropStrength ;
+        }  
 
         //logic for touchscreen to fly the birds
         if( Input.touchCount > 0 )

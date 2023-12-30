@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3545b7aba7e5c42bbf8a0ffc285b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgMoveRate: 1
+  bgMoveRate: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -9.8
   flyStrength: 5
+  dropStrength: -11.8
 --- !u!58 &1941481813
 CircleCollider2D:
   m_ObjectHideFlags: 0
