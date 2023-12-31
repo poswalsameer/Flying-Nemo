@@ -39,23 +39,25 @@ public class Player : MonoBehaviour
         transform.position += direction * Time.deltaTime;
 
 
-        //function to detect collision
+        
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    //function to detect collision
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
 
-        //Debug.Log("Trigger entered");
+       // if(other.gameObject.tag == "obstacle")
+        //{
+          //  FindObjectOfType<GameManager>().gameOver();
+        //}
 
-        if (other.gameObject.tag == "obstacle")
-        {
-            FindObjectOfType<GameManager>().gameOver();
-        }
 
-        else if (other.gameObject.tag == "scoring")
-        {
-            FindObjectOfType<GameManager>().increaseScore();
-        }
-    }
+        //if(other.gameObject.tag == "scoring")
+        //{
+          //  FindObjectOfType<GameManager>().increaseScore();
+        //}
+
+    //}
+
 }
