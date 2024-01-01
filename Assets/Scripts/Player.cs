@@ -44,20 +44,20 @@ public class Player : MonoBehaviour
     }
 
     //function to detect collision
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
+    private void OnTriggerEnter2D(Collider2D other)
+    {
 
-       // if(other.gameObject.tag == "obstacle")
-        //{
-          //  FindObjectOfType<GameManager>().gameOver();
-        //}
+       if(other.gameObject.tag == "obstacle")
+        {
+          FindObjectOfType<GameManager>().gameOver();
+        }
 
 
-        //if(other.gameObject.tag == "scoring")
-        //{
-          //  FindObjectOfType<GameManager>().increaseScore();
-        //}
+        if(other.gameObject.tag == "scoring")
+        {
+          FindObjectOfType<GameManager>().increaseScore();
+        }
 
-    //}
+    }
 
 }
