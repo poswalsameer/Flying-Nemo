@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
 
     //text used to display the score
     public Text scoreText;
+    public Text pauseText;
     //gameobject ref to the play button,main menu button and start game button
     public GameObject playButton;
     public GameObject mainMenuButton;
     public GameObject startGameButton;
+    public GameObject resumeButton;
+    public GameObject pauseButton;
     //gameobject ref to the game over sprite
     public GameObject gameOverImage;
 
@@ -28,7 +31,9 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(false);
         mainMenuButton.SetActive(false);
         gameOverImage.SetActive(false);
+        resumeButton.SetActive(false);
         startGameButton.SetActive(true);
+        pauseText.gameObject.SetActive(false);
     }
 
     //this function will be called first when the game starts,
@@ -50,7 +55,9 @@ public class GameManager : MonoBehaviour
         startGameButton.SetActive(false);
         playButton.SetActive(false);
         mainMenuButton.SetActive(false);
+        resumeButton.SetActive(false);
         gameOverImage.SetActive(false);
+        pauseText.gameObject.SetActive(false);
 
         Time.timeScale = 1f;
         player.enabled = true;
@@ -87,6 +94,9 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(true);
         mainMenuButton .SetActive(true);
         startGameButton.SetActive(false);
+        resumeButton.SetActive(false);
+        pauseText.gameObject.SetActive(false);
+        pauseButton.SetActive(false);
         Pause();
     }
 
@@ -100,5 +110,36 @@ public class GameManager : MonoBehaviour
     public void onMainMenuClicked()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0f;
+        player.enabled=false;   
+    }
+
+    public void pauseButtonClicked()
+    {
+        playButton.SetActive(false);
+        resumeButton.SetActive(true);
+        mainMenuButton.SetActive(true);
+        gameOverImage.SetActive(false);
+        startGameButton.SetActive(false);
+        pauseText.gameObject.SetActive(true);
+
+        pauseGame();
+    }
+
+    public void resumeButtonClicked()
+    {
+        Time.timeScale = 1f;
+        player.enabled = true;
+
+        playButton.SetActive(false);
+        resumeButton.SetActive(false);
+        mainMenuButton.SetActive(false);
+        gameOverImage.SetActive(false);
+        startGameButton.SetActive(false);
+        pauseText.gameObject.SetActive(false);
     }
 }
