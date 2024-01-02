@@ -899,7 +899,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1265492281}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: onClickPlayAgain
+        m_MethodName: resumeButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1505,10 +1505,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2038632867}
+  pauseText: {fileID: 934562064}
   playButton: {fileID: 297750961}
   mainMenuButton: {fileID: 320216845}
   startGameButton: {fileID: 669749941}
   resumeButton: {fileID: 506022337}
+  pauseButton: {fileID: 1305116745}
   gameOverImage: {fileID: 201964667}
   player: {fileID: 917363160}
   walls: {fileID: 0}
